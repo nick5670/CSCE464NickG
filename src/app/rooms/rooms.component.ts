@@ -27,6 +27,7 @@ export class RoomsComponent implements OnInit {
 
   ngOnInit(): void {
     this.rooms= this.service.rooms;
+    console.log(this.rooms);
     this.route.queryParams.subscribe(
       (params) =>{
         const id = params['id'];
