@@ -1,0 +1,33 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class= "container" id="app">
+<h1>Rooms</h1>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Room #</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let room of rooms" [ngClass] = "{'table-danger' : room.isOpen === false,
+      'table-success' : room.isOpen === true}">
+        <td (mouseover) ="displayPhoto(room.id)" (mouseout) = "hidePhoto(room.id)">{{room.name}}</td>
+        <td>{{room.id}}</td>
+        <td>
+            <button type="button" class="btn btn-primary" (click) = "getSelectedRoom(room.id)">view</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div><div class = 'key booked'></div> = Booked</div>
+  <br>
+  <div><div class = 'key open'></div> = Open</div>
+  <app-room-detail [room] = 'selectedRoom' *ngIf = "action === 'view'"></app-room-detail>
+  <app-booked-info *ngIf = "action === 'info'" [bookedInfo] = 'selectedRoom'></app-booked-info>
+</div>
+

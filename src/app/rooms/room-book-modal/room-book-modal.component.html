@@ -1,0 +1,30 @@
+<div class="modal-header">
+      <div class="modal-title">Book Room</div>
+      <button type="button" class="close" aria-label="Close" (click)="handleClose()">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <form *ngIf = "bookingRoom" [formGroup] = "roomForm">
+            <div class="form-group">
+                <label for="name">User Id</label>
+                <input type="text" class="form-control" id="id" formControlName= "bookerId" required >
+              </div>
+            <div class="form-group">
+                <label for="location">Number of Occupants</label>
+                <input type="number" class="form-control" id="occupants" formControlName="numOccupants" required>
+                <div *ngIf = "roomForm.controls['numOccupants'].errors" class="alert alert-danger">
+                    Too many ocuupants for this room!
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="location">Start Time</label>
+                <input type="time" class="form-control" id="time" formControlName="startTime" required>
+                <label for="location">End Time</label>
+                <input type="time" class="form-control" id="time" formControlName="endTime" required>
+                <label>Date</label>
+                <input type="date" class="form-control" id="date" formControlName="date" required>
+            </div>
+            <button type="button" class="btn btn-primary" (click)= "onSubmit()" [disabled] = "roomForm.controls['numOccupants'].errors">Save</button>
+        </form>
+    </div>

@@ -1,0 +1,78 @@
+{
+  "users": [
+    {
+      "email": "user1@gmail.com",
+      "name": "User 1",
+      "role": "admin",
+      "id": 1,
+      "password": "secret"
+    },
+    {
+      "email": "user2@yahoo.com",
+      "name": "User 2",
+      "role": "user",
+      "id": 2,
+      "password": "secret1"
+    },
+    {
+      "email": "user3@huskers.unl.edu",
+      "name": "User 3",
+      "role": "user",
+      "id": 3,
+      "password": ""
+    },
+    {
+      "email": "user4@hotmail.com",
+      "name": "User 4",
+      "role": "user",
+      "id": 4,
+      "password": ""
+    }
+  ],
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Ball room",
+      "isOpen": true,
+      "numPeople": 0,
+      "capacity": 20,
+      "bookedRoomDetails": [
+        "Please enter your Id",
+        "",
+        ""
+      ],
+      "date": "2022-03-09T05:59:29.205Z"
+    },
+    {
+      "id": 2,
+      "name": "Conference room",
+      "isOpen": true,
+      "numPeople": 3,
+      "capacity": 30,
+      "bookedRoomDetails": [],
+      "date": ""
+    },
+    {
+      "id": 3,
+      "name": "Arena",
+      "isOpen": true,
+      "numPeople": 4,
+      "capacity": 250,
+      "bookedRoomDetails": [],
+      "date": ""
+    },
+    {
+      "id": 4,
+      "name": "Lounge",
+      "isOpen": true,
+      "numPeople": 0,
+      "capacity": 5,
+      "bookedRoomDetails": [
+        "Please enter your Id",
+        "",
+        ""
+      ],
+      "date": "2022-03-08T08:55:30.534Z"
+    }
+  ]
+}

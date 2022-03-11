@@ -1,0 +1,26 @@
+
+<div class="card">
+    <div class="card-header">
+        Role Management
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{user.id == null ? 'Add' : 'Edit'}} User</h5>
+        <form [formGroup]="editForm">
+            <label name="username">Username</label>
+            <input type="username" class="form-control" id="username" aria-describedby="emailHelp" formControlName="username">
+            <br/>
+          
+            <label name = "email">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+    
+            <label name = "role">Role</label>
+            <select class="form-control" formControlName="role">
+                <option>user</option>
+                <option>admin</option>
+            </select>
+            <button type = "button" class= "btn btn-primary" (click)= "onSubmit()">Submit</button>
+            <button type = "button" class= "btn btn-primary" (click)= "onCancel()">Cancel</button>
+          </form> 
+    </div>
+    </div>
+

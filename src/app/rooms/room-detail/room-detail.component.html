@@ -1,0 +1,20 @@
+
+<div class= "container">
+<div class="card">
+    <div class="card-header">
+        Room Details
+    </div>
+    <div class="card-body">
+       <h1><i class="fas fa-warehouse"></i>{{room.name}}</h1> 
+       <p>Room Number: {{room.id}}</p> 
+       <p>Room Capacity: {{room.capacity}}</p>
+       <div *ngIf = "room.isOpen">
+            <button type="button" class="btn btn-primary" (click)= 'open()'>Book Room</button>
+        </div>
+
+        <div *ngIf = "!room.isOpen">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" (click)= 'roomInfo()'>Room Info</button>
+        </div>
+    </div>
+  </div>
+</div>

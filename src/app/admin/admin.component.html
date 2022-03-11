@@ -1,0 +1,57 @@
+<div class = "container">
+  <div class="card">
+    <div class="card-header">
+      User List
+    </div>
+    <div class ="container">
+      <input type="text"  [(ngModel)] ="searchText" class= "form-control" placeholder="Search..">
+    </div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">username</th>
+          <th scope="col">Email</th>
+          <th scope="col">Role</th>
+          <th scope="col">Edit User</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let user of users | searchFilter: searchText" >
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.role}}</td>
+          <td>
+          <button type="button" class="btn btn-primary" (click)="editUser(user.id)">Edit</button>
+          <button type="button" class="btn btn-primary" (click)="deleteUser(user.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">Capacity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let room of rooms" >
+        <td>{{room.id}}</td>
+        <td>{{room.name}}</td>
+        <td>{{room.capacity}}</td>
+        <td>
+        <button type="button" class="btn btn-primary" (click)="deleteRoom(room.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary" (click) ="addUser()">Add User</button>
+  <button type="button" class="btn btn-primary" (click) ="addRoom()">Add Room</button>
+  <app-add-user *ngIf = "action === 'add-user'" (addedUserEvent) = "loadData()"></app-add-user>
+  <app-add-room *ngIf = "action === 'add-room'" (addedRoomEvent) = "loadData()"></app-add-room>
+  <app-edit-user *ngIf = "action === 'edit'" [user] = 'selectedUser'></app-edit-user>
+</div>

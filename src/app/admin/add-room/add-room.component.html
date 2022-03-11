@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-header">
+        Role Management
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Add Room</h5>
+        <form [formGroup]="addForm">
+            <label name="username">Name</label>
+            <input type="username" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter Name" formControlName="name">
+            <br/>
+          
+            <label name = "email">Capacity</label>
+            <input type="number" class="form-control" id="email" placeholder=0 formControlName="capacity">
+
+            <button type = "button" class= "btn btn-primary" (click)= "onSubmit()">Add</button>
+            <button type = "button" class= "btn btn-primary" (click)= "onCancel()">Cancel</button>
+          </form> 
+    </div>
+    </div>
+
